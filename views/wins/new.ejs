@@ -1,0 +1,57 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+    <h1>Congrats on the Dub!</h1>
+    <% if (user) { %>
+        <h2>Add a Dub!</h2>
+        <form action="/wins" method="POST">
+            <label>
+                Kills:
+                <input type="number" name="kills">
+            </label>
+            <label>
+                Assists:
+                <input type="number" name="assists">
+            </label>
+            <label>
+                Revives:
+                <input type="number" name="revives">
+            </label>
+            <label>
+                Accuracy:
+                <input type="number" name="crownedVictory">
+            </label>
+            <label>
+                Head Shots:
+                <input type="number" name="headShots">
+            </label>
+            <label>
+                Distance Traveled:
+                <input type="number" name="distanceTraveled">
+            </label>
+            <label>
+                Damage Taken:
+                <input type="number" name="damageTaken">
+            </label>
+            <label>
+                Win Streak:
+                <input type="number" name="winStreak">
+            </label>
+            <label>
+                Number Of Squad Mates:
+                <input type="number" name="numOfSquadMates">
+            </label>
+            <label>
+                Users In Squad:
+                <input type="text" name="usersInSquad" autocomplete="off">
+            </label>
+            <label>
+                Crowned Victory?
+                <input type="checkbox" name="crownedVictory">
+            </label>
+            <button type="submit">Add Dub</button>
+        </form>
+    <% } %>
+
+<%- include('../partials/footer') %>

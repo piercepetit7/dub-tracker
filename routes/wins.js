@@ -6,6 +6,8 @@ import * as winsCtrl from '../controllers/wins.js'
 
 const router = Router()
 
+router.get('/new',isLoggedIn, winsCtrl.new)
+
 router.get('/', isLoggedIn, winsCtrl.index)
 
 router.post('/', isLoggedIn, winsCtrl.create)

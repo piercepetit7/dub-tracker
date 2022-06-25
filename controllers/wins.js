@@ -1,17 +1,10 @@
 import { Win } from '../models/win.js'
 
-function index(req, res) {
-    Win.find({})
-    .then(wins => {
-        res.render('wins/index', {
-            wins,
-            title: "boom", 
-            user: req.user,
-        })
-    })
-    .catch(err => {
-        console.log(err)
-        res.redirect("/")
+
+function newWin(req, res) {
+    res.render("wins/new",{
+        title: 'Add Wins',
+        user: req.user,
     })
 }
 
@@ -28,7 +21,23 @@ function create(req, res) {
     })
 }
 
+function index(req, res) {
+    Win.find({})
+    .then(wins => {
+        res.render('wins/index', {
+            wins,
+            title: "boom", 
+            user: req.user,
+        })
+    })
+    .catch(err => {
+        console.log(err)
+        res.redirect("/")
+    })
+}
+
 export {
     index,
     create,
+    newWin as new,
 }
