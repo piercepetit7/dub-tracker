@@ -8,6 +8,7 @@ import logger from 'morgan'
 import methodOverride from 'method-override'
 import passport from 'passport'
 import { passUserToView } from './middleware/middleware.js'
+import { router as winsRouter } from './routes/wins.js'
 
 // connect to MongoDB with mongoose
 import('./config/database.js')
@@ -56,7 +57,7 @@ app.use(
 // passport middleware
 app.use(passport.initialize())
 app.use(passport.session())
-
+app.use('/wins', winsRouter)
 // custom middleware
 app.use(passUserToView)
 
