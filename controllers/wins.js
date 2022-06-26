@@ -13,7 +13,8 @@ function create(req, res) {
         req.body.crownedVictory = !!req.body.crownedVictory
     Win.create(req.body)
     .then(win => {
-        res.redirect('/wins')
+        console.log("created win:", win)
+        res.redirect('/wins/new')
     })
     .catch(err => {
         console.log(err)

@@ -7,6 +7,10 @@
         <h2>Add a Dub!</h2>
         <form action="/wins" method="POST">
             <label>
+                Crowned Victory?
+                <input type="checkbox" name="crownedVictory">
+            </label>
+            <label>
                 Kills:
                 <input type="number" name="kills">
             </label>
@@ -20,7 +24,12 @@
             </label>
             <label>
                 Accuracy:
-                <input type="number" name="crownedVictory">
+                <input type="number" name="accuracy">
+                (%)
+            </label>
+            <label>
+                Damage To Players:
+                <input type="number" name="damageToPlayers">
             </label>
             <label>
                 Head Shots:
@@ -29,6 +38,7 @@
             <label>
                 Distance Traveled:
                 <input type="number" name="distanceTraveled">
+                (km)
             </label>
             <label>
                 Damage Taken:
@@ -44,11 +54,7 @@
             </label>
             <label>
                 Users In Squad:
-                <input type="text" name="usersInSquad" autocomplete="off">
-            </label>
-            <label>
-                Crowned Victory?
-                <input type="checkbox" name="crownedVictory">
+                <input type="string" name="usersInSquad">
             </label>
             <button type="submit">Add Dub</button>
         </form>

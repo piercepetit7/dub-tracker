@@ -3,9 +3,8 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const winSchema = new Schema({
-    usersInSquad: String,
-    crownedVictroy: Boolean,
     owner: {type: Schema.Types.ObjectId, ref: "Profile"},
+    crownedVictroy: Boolean,
     kills: Number,
     assists: Number,
     revives: Number,
@@ -16,6 +15,7 @@ const winSchema = new Schema({
     damageTaken: Number,
     winStreak: Number,
     numOfSquadMates: Number,
+    usersInSquad: String,
 }, {
     timestamps: true
 })
