@@ -22,24 +22,7 @@ function create(req, res) {
     })
 }
 
-function index(req, res) {
-    Win.find({})
-    .then(wins => {
-        res.render('wins/index', {
-            wins,
-            title: "boom", 
-            user: req.user,
-        })
-    })
-    .catch(err => {
-        console.log(err)
-        res.redirect("/")
-    })
-}
-
-
 export {
-    index,
     create,
     newWin as new,
 }
