@@ -22,7 +22,22 @@ function create(req, res) {
     })
 }
 
+function index(req, res) {
+    Win.find({})
+    .then(wins => {
+        res.render('wins/index', {
+            wins,
+            title: "all dubs"
+        })
+    })
+    .catch(err => {
+        console.log(err)
+        res.redirect("/")
+    })
+}
+
 export {
     create,
     newWin as new,
+    index
 }

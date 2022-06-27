@@ -10,6 +10,9 @@ router.get('/new', isLoggedIn, winsCtrl.new)
 
 router.post('/', isLoggedIn, winsCtrl.create)
 
+//localhost: wins/index/
+router.get('/index', isLoggedIn, winsCtrl.index)
+
 export {
   router
 }

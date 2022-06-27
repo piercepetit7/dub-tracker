@@ -2,7 +2,41 @@
 <%- include('../partials/nav') %>
 
 
-
-
+<h1>all dubs</h1>
+<% wins.forEach(win => { %> 
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title"><%= win.owner.name %>Dub</h5>
+            <p class="card-text">
+                Crowned Victroy:<%= win.crownedVictroy %></p>
+            <p class="card-text">
+                Kills:<%= win.kills %></p>
+            <p class="card-text">
+                Assists:<%= win.assists %></p>
+            <p class="card-text">
+                Revives:<%= win.revives %></p>
+            <p class="card-text">
+                Accuracy:<%= win.accuracy %></p>
+            <p class="card-text">
+                Damage To Players:<%= win.damageToPlayers %></p>
+            <p class="card-text">
+                Head Shots:<%= win.headShots %></p>
+            <p class="card-text">
+                Distance Traveled:<%= win.distanceTraveled %></p>
+            <p class="card-text">
+                Damage Taken:<%= win.damageTaken %></p>
+            <p class="card-text">
+                Win Streak:<%= win.winStreak %></p>
+            <p class="card-text">
+                Number Of Squad Mates:<%= win.numOfSquadMates %></p>
+            <p class="card-text">
+                users In Squad:<%= win.usersInSquad %></p>
+            <p class="card-text">
+                Squad Kills:<%= win.squadKills %></p>
+            <a href="wins/edit" class="btn btn-primary">Edit Dub</a>
+            <a href="/" class="btn btn-primary">Add Comment</a>
+        </div>
+    </div>
+<% }) %> 
 
 <%- include('../partials/footer') %>
