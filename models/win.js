@@ -16,6 +16,7 @@ const winSchema = new Schema({
     winStreak: Number,
     numOfSquadMates: Number,
     usersInSquad: String,
+    squadKills: Number,
 }, {
     timestamps: true
 })
