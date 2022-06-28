@@ -20,6 +20,46 @@
     <h3>Squad Kills:<%= win.squadKills %></h3>
 </section>
 <div>
+    <% if (win.owner.equals(user?.profile._id)) { %>
+        <a href="/wins/<%= win._id %>/edit" class="btn btn-primary">Edit Dub!</a>
+            <form action="/wins/<%= win._id %>?_method=DELETE" method="POST">
+                <button class="btn btn-primary" type="submit" href="/wins/index">Delete this Dub?!?!?!</button>
+        </form>
+    <% } %>
+</div>
+<div>
+    <% if (user) { %>
+        <form action="/comments/<%= win._id %>" method="POST">
+        <div class="mb-3 mt-4">
+            <label 
+                for="exampleFormControlTextarea1" 
+                class="form-label text-light"
+            >
+                Leave a comment:
+            </label>
+            <textarea 
+                name="content" 
+                class="form-control" 
+                id="exampleFormControlTextarea1" 
+                rows="3"
+            ></textarea>
+            <select 
+                name="rating" 
+                class="form-select" 
+            >
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>        
+        </div>
+            <button class="btn btn-warning"type="submit">Add comment</button>
+        </form> 
+    <% } %>
+</div>
+
+<div>
     <% if (user) { %>
         <h2 class="text-light my-3">Comments:</h2>
         <div 
@@ -61,13 +101,10 @@
 </div>  
 <div>
     <% if (win.owner.equals(user?.profile._id)) { %>
-        <a href="/wins/<%= win._id %>/edit" class="btn btn-primary">Edit Dub</a>
-        <form action="/wins/<%= win._id %>?_method=DELETE" method="POST">
-            <button class="btn btn-primary" type="submit" href="/wins/index">Delete this win💀</button>
-        </form>
-    <% } %>
-    <% if (user) { %>
-        <a href="/comments/new" class="btn btn-primary">Add Comment</a>
+        <a href="/wins/index" class="btn btn-primary">To All Dubs</a>
+        <a href="/comments/new" class="btn btn-primary">ADD ANOTHER DUB</a>
+    <% } else { %>
+        <a href="/comments/new" class="btn btn-primary">ADD Your own DUB</a>
         <a href="/wins/index" class="btn btn-primary">To All Dubs</a>
     <% } %>
 </div>

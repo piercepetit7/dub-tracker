@@ -20,35 +20,7 @@
     <h3>Squad Kills:<%= win.squadKills %></h3>
 </section>
 
-<% if (user) { %>
-    <form action="/comments/<%= win._id %>" method="POST">
-    <div class="mb-3 mt-4">
-        <label 
-            for="exampleFormControlTextarea1" 
-            class="form-label text-light"
-        >
-            Leave a comment:
-        </label>
-        <textarea 
-            name="content" 
-            class="form-control" 
-            id="exampleFormControlTextarea1" 
-            rows="3"
-        ></textarea>
-        <select 
-            name="rating" 
-            class="form-select" 
-        >
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-        </select>        
-    </div>
-        <button class="btn btn-warning"type="submit">Add comment</button>
-    </form> 
-<% } %>
+
 
 
 <%- include('../partials/footer') %>
