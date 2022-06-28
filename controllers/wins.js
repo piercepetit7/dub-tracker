@@ -1,5 +1,5 @@
 import { Win } from '../models/win.js'
-
+import { Comment } from '../models/comment.js'
 
 function newWin(req, res) {
     res.render("wins/new",{
@@ -15,12 +15,12 @@ function create(req, res) {
     Win.create(req.body)
     .then(win => {
         console.log("created win:", win)
-        res.redirect('/wins/new')
+        res.redirect(`/wins/${win._id}`)
         console.log(req.user.profile.name)
     })
     .catch(err => {
         console.log(err)
-        res.redirect('/wins')
+        res.redirect('/')
     })
 }
 
@@ -41,6 +41,12 @@ function index(req, res) {
 function show(req, res) {
     Win.findById(req.params.id)
     .populate("owner")
+    .populate({
+        path: "comments",
+        populate: {
+            path: 'author'
+        }
+    })
     .then(win => {
         res.render('wins/show', {
             win,
@@ -49,7 +55,7 @@ function show(req, res) {
     })
     .catch(err => {
         console.log(err)
-        res.redirect('/wins')
+        res.redirect('/')
     })
 }
 
@@ -64,7 +70,7 @@ function edit(req, res) {
     })
     .catch(err => {
         console.log(err)
-        res.redirect('/wins')
+        res.redirect('/')
     })
 }
 function update(req, res) {
@@ -76,15 +82,31 @@ function update(req, res) {
                 res.redirect(`/wins/${win._id}`)
             })
         } else {
-            throw new Error ('you in da wrong place')
+            throw new Error ('You in da wrong place Dawg')
         }
     })
     .catch(err => {
         console.log(err)
-        res.redirect(`/wins`)
+        res.redirect(`/`)
     })
 }
-
+function deleteTaco(req, res) {
+    Win.findByIdAndDelete(req.params.id)
+    .then(win => {
+        if (win.owner.equals(req.user.profile._id)) {
+            win.delete()
+            .then(() => {
+                res.redirect('/wins/index')
+            })
+        } else {
+            throw new Error ('You in da wrong place Dawg')
+        }   
+    })
+    .catch(err => {
+        console.log(err)
+        res.redirect('/')
+    })
+}
 
 export {
     create,
@@ -93,4 +115,5 @@ export {
     show,
     edit,
     update,
+    deleteTaco as delete,
 }

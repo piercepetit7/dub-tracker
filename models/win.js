@@ -17,6 +17,7 @@ const winSchema = new Schema({
     numOfSquadMates: Number,
     usersInSquad: String,
     squadKills: Number,
+    comments: [{ type: Schema.Types.ObjectId, ref: "Comment" }],
 }, {
     timestamps: true
 })

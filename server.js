@@ -9,6 +9,8 @@ import methodOverride from 'method-override'
 import passport from 'passport'
 import { passUserToView } from './middleware/middleware.js'
 import { router as profilesRouter } from './routes/profiles.js'
+import { router as commentsRouter } from './routes/comments.js'
+
 
 // connect to MongoDB with mongoose
 import('./config/database.js')
@@ -66,7 +68,7 @@ app.use('/', indexRouter)
 app.use('/auth', authRouter)
 app.use('/profiles', profilesRouter)
 app.use('/wins', winsRouter)
-
+app.use('/comments', commentsRouter)
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404))

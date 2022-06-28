@@ -1,0 +1,54 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+
+<section>
+	<h1><%= win.owner.name %>'s Dub</h1>
+    <h2><%= win.name %></h2>
+	<h3>Crowned Victroy:<%= win.crownedVictroy %></h3>
+    <h3>Kills:<%= win.kills %></h3>
+    <h3>Assists:<%= win.assists %></h3>
+    <h3>Revives:<%= win.revives %></h3>
+    <h3>Accuracy:<%= win.accuracy %>%</h3>
+    <h3>Damage To Players:<%= win.damageToPlayers %></h3>
+    <h3>Head Shots:<%= win.headShots %></h3>
+    <h3>Distance Traveled:<%= win.distanceTraveled %></h3>
+    <h3>Damage Taken:<%= win.damageTaken %></h3>
+    <h3>Win Streak:<%= win.winStreak %></h3>
+    <h3>Number Of Squad Mates:<%= win.numOfSquadMates %></h3>
+    <h3>users In Squad:<%= win.usersInSquad %></h3>
+    <h3>Squad Kills:<%= win.squadKills %></h3>
+</section>
+
+<% if (user) { %>
+    <form action="/comments/<%= win._id %>" method="POST">
+    <div class="mb-3 mt-4">
+        <label 
+            for="exampleFormControlTextarea1" 
+            class="form-label text-light"
+        >
+            Leave a comment:
+        </label>
+        <textarea 
+            name="content" 
+            class="form-control" 
+            id="exampleFormControlTextarea1" 
+            rows="3"
+        ></textarea>
+        <select 
+            name="rating" 
+            class="form-select" 
+        >
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>        
+    </div>
+        <button class="btn btn-warning"type="submit">Add comment</button>
+    </form> 
+<% } %>
+
+
+<%- include('../partials/footer') %>
