@@ -16,13 +16,13 @@
             <p class="card-text">
                 Revives:<%= win.revives %></p>
             <p class="card-text">
-                Accuracy:<%= win.accuracy %></p>
+                Accuracy:<%= win.accuracy %>%</p>
             <p class="card-text">
                 Damage To Players:<%= win.damageToPlayers %></p>
             <p class="card-text">
                 Head Shots:<%= win.headShots %></p>
             <p class="card-text">
-                Distance Traveled:<%= win.distanceTraveled %></p>
+                Distance Traveled:<%= win.distanceTraveled %>(km)</p>
             <p class="card-text">
                 Damage Taken:<%= win.damageTaken %></p>
             <p class="card-text">
@@ -33,7 +33,9 @@
                 users In Squad:<%= win.usersInSquad %></p>
             <p class="card-text">
                 Squad Kills:<%= win.squadKills %></p>
-            <a href="wins/edit" class="btn btn-primary">Edit Dub</a>
+            <% if (user) { %>
+            <a href="/wins/<%= win._id %>" class="btn btn-primary">Details</a>
+            <% } %>
             <a href="/" class="btn btn-primary">Add Comment</a>
         </div>
     </div>

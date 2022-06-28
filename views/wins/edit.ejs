@@ -1,0 +1,66 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+    <h1>Edit the Dub</h1>
+    <form action="/wins/<%= win._id %>?_method=PUT" method="POST">
+        <label>
+            Crowned Victory?
+            <input type="checkbox" name="crownedVictory">
+        </label>
+        <label>
+            Kills:
+            <input type="number" name="kills" value="<%= win.kills %>">
+        </label>
+        <label>
+            Assists:
+            <input type="number" name="assists" value="<%= win.assists %>">
+        </label>
+        <label>
+            Revives:
+            <input type="number" name="revives" value="<%= win.revives %>">
+        </label>
+        <label>
+            Accuracy:
+            <input type="number" name="accuracy" value="<%= win.accuracy %>">
+            (%)
+        </label>
+        <label>
+            Damage To Players:
+            <input type="number" name="damageToPlayers" value="<%= win.damageToPlayers %>">
+        </label>
+        <label>
+            Head Shots:
+            <input type="number" name="headShots" value="<%= win.headShots %>">
+        </label>
+        <label>
+            Distance Traveled:
+            <input type="number" name="distanceTraveled" value="<%= win.distanceTraveled %>">
+            (km)
+        </label>
+        <label>
+            Damage Taken:
+            <input type="number" name="damageTaken" value="<%= win.damageTaken %>">
+        </label>
+        <label>
+            Win Streak:
+            <input type="number" name="winStreak" value="<%= win.winStreak %>">
+        </label>
+        <label>
+            Number Of Squad Mates:
+            <input type="number" name="numOfSquadMates" value="<%= win.numOfSquadMates %>">
+        </label>
+        <label>
+            Users In Squad:
+            <input type="string" name="usersInSquad" value="<%= win.usersInSquad %>">
+        </label>
+        <label>
+            Number Of Squad Kills:
+            <input type="number" name="squadKills" value="<%= win.usersInSquad %>">
+        </label>
+        
+        <button type="submit">Edit the Dub</button>
+    </form>
+</section>
+
+<%- include('../partials/footer') %>

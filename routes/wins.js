@@ -13,6 +13,12 @@ router.post('/', isLoggedIn, winsCtrl.create)
 //localhost: wins/index/
 router.get('/index', isLoggedIn, winsCtrl.index)
 
+router.get('/:id', winsCtrl.show)
+//localhost: wins/:id/edit
+router.get('/:id/edit', isLoggedIn, winsCtrl.edit)
+
+router.put('/:id', isLoggedIn, winsCtrl.update)
+
 export {
   router
 }

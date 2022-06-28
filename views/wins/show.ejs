@@ -1,0 +1,35 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+
+<section>
+	<h1><%= win.owner.name %>'s Dub</h1>
+    <h2><%= win.name %></h2>
+	<h3>Crowned Victroy:<%= win.crownedVictroy %></h3>
+    <h3>Kills:<%= win.kills %></h3>
+    <h3>Assists:<%= win.assists %></h3>
+    <h3>Revives:<%= win.revives %></h3>
+    <h3>Accuracy:<%= win.accuracy %>%</h3>
+    <h3>Damage To Players:<%= win.damageToPlayers %></h3>
+    <h3>Head Shots:<%= win.headShots %></h3>
+    <h3>Distance Traveled:<%= win.distanceTraveled %></h3>
+    <h3>Damage Taken:<%= win.damageTaken %></h3>
+    <h3>Win Streak:<%= win.winStreak %></h3>
+    <h3>Number Of Squad Mates:<%= win.numOfSquadMates %></h3>
+    <h3>users In Squad:<%= win.usersInSquad %></h3>
+    <h3>Squad Kills:<%= win.squadKills %></h3>
+</section>
+
+    </div>
+        <div>
+            <% if (win.owner.equals(user?.profile._id)) { %>
+                <a href="/wins/<%= win._id %>/edit" class="btn btn-primary">Edit Dub</a>
+            <% } %>
+            <% if (user) { %>
+                <a href="/" class="btn btn-primary">Add Comment</a>
+                <a href="/wins/index" class="btn btn-primary">Go Back</a>
+            <% } %>
+        </div>
+
+
+<%- include('../partials/footer') %>
