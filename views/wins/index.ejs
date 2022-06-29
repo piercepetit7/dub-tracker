@@ -2,11 +2,11 @@
 <%- include('../partials/nav') %>
 
 
-<h1>all dubs</h1>
+<h1><%= title %> </h1>
 <% wins.forEach(win => { %> 
     <div class="card" style="width: 18rem;">
         <div class="card-body">
-            <h5 class="card-title"><%= win.owner.name %>Dub</h5>
+            <h5 class="card-title"><%= win.owner.name %>'s Dub</h5>
             <p class="card-text">
                 Crowned Victroy:<%= win.crownedVictroy %></p>
             <p class="card-text">
@@ -34,9 +34,8 @@
             <p class="card-text">
                 Squad Kills:<%= win.squadKills %></p>
             <% if (user) { %>
-            <a href="/wins/<%= win._id %>" class="btn btn-primary">Details</a>
+            <a href="/wins/<%= win._id %>" class="btn btn-primary">Details / Add Comment</a>
             <% } %>
-            <a href="/" class="btn btn-primary">Add Comment</a>
         </div>
     </div>
 <% }) %> 

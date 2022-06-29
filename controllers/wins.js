@@ -1,5 +1,6 @@
 import { Win } from '../models/win.js'
 import { Comment } from '../models/comment.js'
+import { Profile } from "../models/profile.js"
 
 function newWin(req, res) {
     res.render("wins/new",{
@@ -26,10 +27,11 @@ function create(req, res) {
 
 function index(req, res) {
     Win.find({})
+    .populate("owner")
     .then(wins => {
         res.render('wins/index', {
             wins,
-            title: "all dubs"
+            title: "All Dubs!!!"
         })
     })
     .catch(err => {

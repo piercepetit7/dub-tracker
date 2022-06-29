@@ -35,14 +35,15 @@
                 for="exampleFormControlTextarea1" 
                 class="form-label text-light"
             >
-                Leave a comment:
             </label>
+            <h2>Leave a comment:</h2>
             <textarea 
                 name="content" 
                 class="form-control" 
                 id="exampleFormControlTextarea1" 
                 rows="3"
             ></textarea>
+            <h2>Rate Dub</h2>
             <select 
                 name="rating" 
                 class="form-select" 
@@ -61,7 +62,7 @@
 
 <div>
     <% if (user) { %>
-        <h2 class="text-light my-3">Comments:</h2>
+        <h2 class="">Comments:</h2>
         <div 
             class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g1 px-4"
         >
@@ -102,9 +103,9 @@
 <div>
     <% if (win.owner.equals(user?.profile._id)) { %>
         <a href="/wins/index" class="btn btn-primary">To All Dubs</a>
-        <a href="/comments/new" class="btn btn-primary">ADD ANOTHER DUB</a>
+        <a href="/wins/new" class="btn btn-primary">ADD ANOTHER DUB</a>
     <% } else { %>
-        <a href="/comments/new" class="btn btn-primary">ADD Your own DUB</a>
+        <a href="/wins/new" class="btn btn-primary">ADD Your own DUB</a>
         <a href="/wins/index" class="btn btn-primary">To All Dubs</a>
     <% } %>
 </div>

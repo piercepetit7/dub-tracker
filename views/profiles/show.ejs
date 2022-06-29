@@ -10,18 +10,9 @@
 
 <main>
   <section class="bg-dark text-secondary px-4 py-5 text-center">
-    <% if (profile.avatar) { %>
       <img
-        class="image-rounded" 
-        src="<%= profile.avatar %>" 
-        alt="<%= profile.name %>'s avatar"
+        src="<%= profile.avatar %>"
       >
-    <% } else {%>
-      <img
-        src="/images/icons/user.png" 
-        alt="A placeholder avatar"
-      >
-    <% } %> 
     <h1 class="display-5 fw-bold text-white pt-2"><%= profile.name %></h1>
     <div class="container py-4">
       <table class="table table-dark table-striped align-middle">
