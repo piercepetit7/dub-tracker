@@ -5,6 +5,7 @@ const commentSchema = new Schema({
     rating: {type: Number, min: 1, max: 5},
     content: String,
     author: { type: Schema.Types.ObjectId, ref: "Profile" },
+    win: { type: Schema.Types.ObjectId, ref: "Win" }
 },{
     timestamps: true,
 });

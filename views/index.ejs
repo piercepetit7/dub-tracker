@@ -4,8 +4,108 @@
 <main>
   <h1>Wut up, <%= user ? user.profile.name : "Gamer" %>, Welcome to the Dub Tracker</h1>
   <button href="/wins/new">ADD DUB!</button>
-
-
+  <section class="bg-light">
+    <% if (user) { %>
+    <div class="container">
+      <h1 class="py-4"><%= title %></h1>
+      <h2 class="mb-3">Latest Dubs</h2>
+        <div class="card mb-3" style="max-width: 540px;">
+          <% wins.forEach(win => { %>
+            <a class="text-decoration-none" href="/wins/<%= win._id %>">
+              <div class="col-md-4">
+                <img
+                  class="img-fluid"
+                  src="<%= win.owner.avatar %>"
+                  width="100%"
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title"><%= win.owner.name %>'s Dub</h5>
+                  <p class="card-text">
+                    | Kills:<%= win.kills %>
+                    | | Assists:<%= win.assists %>
+                    | | Revives:<%= win.revives %>
+                    | | Users In Squad:<%= win.usersInSquad %>
+                    | | Squad Kills:<%= win.squadKills %> |</p>
+                  <p class="card-text"><small class="text-muted">This Dub was caught on: <%= win.createdAt.toLocaleDateString() %></small></p>
+                </div>
+              </div>
+            </a>
+          <% }) %>
+        </div>
+    </div>
+      <h2 class="mb-3">New Comments</h2>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g1 px-4">
+        <% comments.forEach(comment => { %>
+        <div class="col">
+          <div class="card mb-3 bg-secondary">
+            <div class="row g-0">
+              <div class="col-3">
+                <img
+                  src="<%= comment.author.avatar %>"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="col-9">
+                <div class="card-body">
+                  <h3 class="card-title fs-4 mb-0">
+                    <a
+                      class="text-decoration-none text-dark"
+                      href="/profiles/<%= comment.author.name %>"
+                    >
+                      <%= comment.author.name %>'s
+                    </a>
+                  </h3>
+                  <h6> comment on</h6>
+                  <p class="card-text text-dark"></p>
+                  <h4 class="fs-5">
+                    <a
+                    class="text-decoration-none text-dark"
+                    href="/wins/<%= comment.win._id %>"
+                  >
+                    <%= comment.win.owner.name %>'s Dub
+                  </a>
+                  </h4>
+                  <p class="card-text text-dark">
+                    <%= "🌟".repeat(comment.rating) %>
+                  </p>
+                  <p class="card-text text-dark"><%= comment.content %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+      <h2 class="mb-3">New Users</h2>
+      <div
+        class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g1 px-4"
+      >
+        <% profiles.forEach(profile => { %>
+        <div class="col">
+          <a class="text-decoration-none" href="/profiles/<%= profile._id %>">
+            <div class="card mb-4 shadow-sm">
+              <img
+                class="card-img-top"
+                src="<%= profile.avatar %>"
+                width="100%"
+              />
+              <div class="card-body">
+                <p class="card-title text-dark fs-5 mb-0"><%= profile.name %></p>
+                <p class="card-text text-dark fs-6 mt-0">
+                  Joined <%= profile.createdAt.toLocaleDateString() %>
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <% }) %>
+      </div>
+    <% } %>
+    </div>
+  </section>
 </main>
+
 
 <%- include('./partials/footer') %>
