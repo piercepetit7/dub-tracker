@@ -36,23 +36,24 @@
                 class="form-label text-light"
             >
             </label>
-            <h2>Leave a comment:</h2>
+            <h2>Leave a comment/Ninja Rating:</h2>
             <textarea 
                 name="content" 
                 class="form-control" 
                 id="exampleFormControlTextarea1" 
                 rows="3"
             ></textarea>
-            <h2>Rate Dub</h2>
+            <h2>Ninja Rating 🥷🏻</h2>
             <select 
                 name="rating" 
                 class="form-select" 
             >
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
+                <option value="0">0</option>
+                <option value="1">🥷🏻</option>
+                <option value="2">🥷🏻🥷🏻</option>
+                <option value="3">🥷🏻🥷🏻🥷🏻</option>
+                <option value="4">🥷🏻🥷🏻🥷🏻🥷🏻</option>
+                <option value="5">🥷🏻🥷🏻🥷🏻🥷🏻🥷🏻</option>
             </select>        
         </div>
             <button class="btn btn-warning"type="submit">Add comment</button>
@@ -87,10 +88,10 @@
                                         <%= comment.author.name %>
                                     </a>
                                 </h3>
-                                <p class="card-text text-dark">
-                                    <%= "🌟".repeat(comment.rating) %>
-                                </p>
-                                <p class="card-text text-dark"><%= comment.content %></p>
+                                <h5 class="card-text text-dark"><%= comment.content %></h5>
+                                <h6 class="card-text text-dark">
+                                    <%= "🥷🏻".repeat(comment.rating) %>
+                                </h6>
                             </div>
                         </div>
                     </div>
