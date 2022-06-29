@@ -42,7 +42,7 @@
       </table>
     </div>
     <% if (user.profile.equals(profile._id)) { %>
-      <%# This is where we'll add the UI to edit a profile %> 
+ 
       <a 
         class="btn btn-warning"
         role="button" 
@@ -71,7 +71,42 @@
       </div>
       <h2 class="mb-3"><%= profile.name %>'s Dubs:</h2>
       <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g5 px-1">
-        <%# This is where we'll loop over our Dubs! %> 
+        <% wins.forEach(win => { %> 
+          <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                  <h5 class="card-title"><%= win.owner.name %>'s Dub</h5>
+                  <p class="card-text">
+                      Crowned Victroy:<%= win.crownedVictroy %></p>
+                  <p class="card-text">
+                      Kills:<%= win.kills %></p>
+                  <p class="card-text">
+                      Assists:<%= win.assists %></p>
+                  <p class="card-text">
+                      Revives:<%= win.revives %></p>
+                  <p class="card-text">
+                      Accuracy:<%= win.accuracy %>%</p>
+                  <p class="card-text">
+                      Damage To Players:<%= win.damageToPlayers %></p>
+                  <p class="card-text">
+                      Head Shots:<%= win.headShots %></p>
+                  <p class="card-text">
+                      Distance Traveled:<%= win.distanceTraveled %>(km)</p>
+                  <p class="card-text">
+                      Damage Taken:<%= win.damageTaken %></p>
+                  <p class="card-text">
+                      Win Streak:<%= win.winStreak %></p>
+                  <p class="card-text">
+                      Number Of Squad Mates:<%= win.numOfSquadMates %></p>
+                  <p class="card-text">
+                      users In Squad:<%= win.usersInSquad %></p>
+                  <p class="card-text">
+                      Squad Kills:<%= win.squadKills %></p>
+                  <% if (user) { %>
+                  <a href="/wins/<%= win._id %>" class="btn btn-primary">Details / Add Comment</a>
+                  <% } %>
+              </div>
+          </div>
+      <% }) %> 
       </div>
     </div>
   </section>
