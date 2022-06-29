@@ -6,19 +6,6 @@
   <nav>
     <% if (user) { %>
       <section>
-        <a href="/auth/logout">
-          <button type="submit">Logout</button>
-        </a>
-      </section>
-      <section>
-        <div id="pro-pic-nav">
-          <img
-            src="<%= user.profile.avatar %>"
-            alt="<%= user.profile.name %> avatar"
-          />
-        </div>
-      </section>
-      <section>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,9 +22,9 @@
                 <li class="nav-item">
                   <a class="nav-link" href="/wins/index">All Dubs</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Leaderboard</a>
-                </li>
+                <!-- <li class="nav-item">
+                  <a class="nav-link" href="#"></a>
+                </li> -->
                 <li class="nav-item">
                   <a class="nav-link" href="/profiles">Profiles</a>
                 </li>
@@ -46,11 +33,25 @@
           </div>
         </nav>
       </section>
-    <% } else { %>
-      <a href="/auth/google" class="siwg-link">
-        <button type="submit" class="siwg">
-          <img id="siwg-image" alt="Sign in with Google" />
-        </button>
-      </a>
-    <% } %>
-  </nav>
+      <% } else { %>
+        <a href="/auth/google" class="siwg-link">
+          <button type="submit" class="siwg">
+            <img id="siwg-image" alt="Sign in with Google" />
+          </button>
+        </a>
+        <% } %>
+        <section>
+          <a href="/auth/logout">
+            <button type="submit">Logout</button>
+          </a>
+        </section>
+        <section>
+          <div id="pro-pic-nav">
+            <img
+              src="<%= user.profile.avatar %>"
+              alt="<%= user.profile.name %> avatar"
+            />
+          </div>
+        </section>
+      </nav>
+      

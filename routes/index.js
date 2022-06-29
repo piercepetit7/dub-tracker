@@ -1,6 +1,7 @@
 import { Router } from 'express'
 import * as indexCtrl from '../controllers/index.js'
 
+
 const router = Router()
 
 router.get('/', isLoggedIn, indexCtrl.index)
