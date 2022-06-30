@@ -8,8 +8,6 @@ import logger from 'morgan'
 import methodOverride from 'method-override'
 import passport from 'passport'
 import { passUserToView } from './middleware/middleware.js'
-import { router as profilesRouter } from './routes/profiles.js'
-import { router as commentsRouter } from './routes/comments.js'
 
 
 // connect to MongoDB with mongoose
@@ -22,6 +20,8 @@ import('./config/passport.js')
 import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
 import { router as winsRouter } from './routes/wins.js'
+import { router as profilesRouter } from './routes/profiles.js'
+import { router as commentsRouter } from './routes/comments.js'
 
 // create the express app
 const app = express()
