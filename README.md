@@ -11,7 +11,7 @@ Tech Used: HTML, CSS, JavaScript, Node, Express, Google OAuth, MongoDB, Mongoose
 
 Credits:
 
-HUGE Thanks to Game Goose couldnt have done this without doing that code along!!! 
+HUGE Thanks to Game Goose couldn't have done this without doing that code along!!! 
     https://gamegoose2.herokuapp.com/
 
 Bootstrap - all cards on website usew this
@@ -19,9 +19,10 @@ Bootstrap - all cards on website usew this
 
 Google Fonts:
 
-Favicon: <a href=“https://www.flaticon.com/free-icons/gamepad” title=“gamepad icons”>Gamepad icons created by Smashicons - Flaticon</a>
+Favicon: <a href=“https://www.flaticon.com/free-icons/gamepad">Gamepad icons created by Smashicons - Flaticon</a>
 
 
 ICEBOX:
+<br>
 [ ] - AAU, the data will be pulled automatically from image in discord by Bot or <a href="https://www.scrapingbee.com/blog/web-scraping-javascript/">Web Scraping</a> from stat website.
 [ ] - 
