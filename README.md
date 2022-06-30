@@ -1,5 +1,6 @@
 # Drop Team Dub Tracker
 
+![](public/images/readme/Screen%20Shot%202022-06-30%20at%2011.51.03%20AM.png)
 
 This is a Application to help my friends and I track our wins"Dubs" in Battle Royale games! You can add, edit, delete Dubs with also add comment and ninja rating section!
 
@@ -32,13 +33,14 @@ Favicon: <a href='https://www.flaticon.com/free-icons/gamepad'> Gamepad icons cr
 ICEBOX: | Task
 :---:| ---
 ✅| Complete
+⬜️| - AAU, I can edit my profile.<br>
 ⬜️| - AAU, the data will be pulled automatically from image in discord by Bot or <a href="https://www.scrapingbee.com/blog/web-scraping-javascript/">Web Scraping</a> from stat website.<br>
+⬜️| - AAU, It automatically knows who is in my squad and adds those users to win.<br>
 ⬜️| - AAU, I can track my Halo(MCC & Infinite) Multiplayer ranked wins.<br>
 ⬜️| - AAU, I can track my WarZone wins.<br>
-⬜️| - AAU, i can track my APEX wins.<br>
-⬜️| - AAU, it automatically knows who is in my squad and adds those users to win.<br>
-⬜️| - AAU, the site automatically rates my win on the stats from the game.<br>
-⬜️| - AAU, i can see best of month (highest ranked win) on home screen.<br>
-⬜️| - AAU, i can view the leaderboard of stats and see who has the most kills, wins, damage, etc...<br>
-⬜️| - AAU, i can edit my profile.<br>
+⬜️| - AAU, I can track my APEX wins.<br>
+⬜️| - AAU, The site automatically rates my win on the stats from the game.<br>
+⬜️| - AAU, The site give out badges on some stats from the game.Examples(Camper or Nomad, Kill Leader or Got Carried)<br>
+⬜️| - AAU, I can see best of month (highest ranked win) on home screen.<br>
+⬜️| - AAU, I can view the leaderboard of stats and see who has the most kills, wins, damage, etc...<br>
 ⬜️| - .<br>
