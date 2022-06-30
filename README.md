@@ -28,7 +28,7 @@ Favicon: <a href='https://www.flaticon.com/free-icons/gamepad'> Gamepad icons cr
 
 
 <br>
-<br>
+
 ICEBOX: | Task
 :---:| ---
 ⬜️| - AAU, the data will be pulled automatically from image in discord by Bot or <a href="https://www.scrapingbee.com/blog/web-scraping-javascript/">Web Scraping</a> from stat website.<br>
