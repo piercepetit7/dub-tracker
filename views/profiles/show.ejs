@@ -1,11 +1,4 @@
 <%- include('../partials/html-head') %>
-<% if (user.profile.equals(profile._id)) { %>
-  <style>
-    #profile-dropdown {
-      display: none;
-    }
-  </style>
-<% } %>
 <%- include('../partials/nav') %>
 
 <main>
@@ -42,7 +35,6 @@
       </table>
     </div>
     <% if (user.profile.equals(profile._id)) { %>
- 
       <a 
         class="btn btn-warning"
         role="button" 
@@ -58,17 +50,10 @@
         Logout
       </a>
     <% } %>
-    <%# This is where we'll add a button to 'console/username or edit console/username' a user %> 
-    
   </section>
+  <button class="btn btn-primary" href="/profiles">Back to all Profiles</button>
   <section class="bg-light pt-3">
     <div class="container">
-      <!-- <h2 class="mb-3"><%= profile.name %>'s Console/Usernames:</h2>
-      <div
-        class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g1 px-1"
-      >
-      <%# This is where we'll display our console/usernames %> 
-      </div> -->
       <h2 class="mb-3"><%= profile.name %>'s Dubs:</h2>
       <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g5 px-1">
         <% wins.forEach(win => { %> 

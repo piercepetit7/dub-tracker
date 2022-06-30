@@ -10,7 +10,7 @@ function index(req, res) {
   .then(wins => {
     Profile.find({})
     .sort({_id: -1})
-    .limit(5)
+    .limit(6)
     .then(profiles => {
       Comment.find({})
       .sort({_id: -1})
