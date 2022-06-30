@@ -1,67 +1,44 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href='/stylesheets/wins/input.css'>
 <%- include('../partials/nav') %>
+<h1>Congrats on the Dub!</h1>
 
-<section>
-    <h1>Congrats on the Dub!</h1>
+<section class="inputForForm">
     <% if (user) { %>
-        <h2>Add a Dub!</h2>
-        <form action="/wins" method="POST">
-            <label>
-                Crowned Victory?
-                <input type="checkbox" name="crownedVictory">
-            </label>
-            <label>
-                Kills:
+        <form class="allDataInput" action="/wins" method="POST">
+            <div class="headCard"> 
+                <h2>Add a Dub!</h2>
+            </div>
+            <div class="screenData">
+                <p>Kills:</p>
                 <input type="number" name="kills">
-            </label>
-            <label>
-                Assists:
+                <p>Assists:</p>
                 <input type="number" name="assists">
-            </label>
-            <label>
-                Revives:
+                <p>Revives:</p>
                 <input type="number" name="revives">
-            </label>
-            <label>
-                Accuracy:
+                <p>Accuracy:(%)</p>
                 <input type="number" name="accuracy">
-                (%)
-            </label>
-            <label>
-                Damage To Players:
+                <p>Damage To Players:</p>
                 <input type="number" name="damageToPlayers">
-            </label>
-            <label>
-                Head Shots:
+                <p>Head Shots:</p>
                 <input type="number" name="headShots">
-            </label>
-            <label>
-                Distance Traveled:
+                <p>Distance Traveled:(km)</p>
                 <input type="number" name="distanceTraveled">
-                (km)
-            </label>
-            <label>
-                Damage Taken:
+                <p>Damage Taken:</p>
                 <input type="number" name="damageTaken">
-            </label>
-            <label>
-                Win Streak:
+            </div>
+            <div class="notShownData">
+                <p>Win Streak:</p>
                 <input type="number" name="winStreak">
-            </label>
-            <label>
-                Number Of Squad Mates:
+                <p>Number Of Squad Mates:</p>
                 <input type="number" name="numOfSquadMates">
-            </label>
-            <label>
-                Users In Squad:
-                <input type="string" name="usersInSquad">
-            </label>
-            <label>
-                Number Of Squad Kills:
+                <p>Squad Mates:</p>
+                <input id="SM" type="string" name="usersInSquad">
+                <p>Number Of Squad Kills:</p>
                 <input type="number" name="squadKills">
-            </label>
-            <button type="submit">Add Dub</button>
-        </form>
+                <button class="btn btn-primary" type="submit">Add Dub</button>
+            </form>
+        </div>
     <% } %>
-
+</section>
 <%- include('../partials/footer') %>

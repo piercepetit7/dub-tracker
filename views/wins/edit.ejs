@@ -1,66 +1,39 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href='/stylesheets/wins/input.css'>
 <%- include('../partials/nav') %>
 
-<section>
-    <h1>Edit the Dub</h1>
-    <form action="/wins/<%= win._id %>?_method=PUT" method="POST">
-        <label>
-            Crowned Victory?
-            <input type="checkbox" name="crownedVictory">
-        </label>
-        <label>
-            Kills:
+<section class="inputForForm">
+    <form class="allDataInput" action="/wins/<%= win._id %>?_method=PUT" method="POST">
+        <h1>Edit the Dub</h1>
+        <div class="screenData">
+            <p>Kills:</p>
             <input type="number" name="kills" value="<%= win.kills %>">
-        </label>
-        <label>
-            Assists:
+            <p>Assists:</p>
             <input type="number" name="assists" value="<%= win.assists %>">
-        </label>
-        <label>
-            Revives:
+            <p>Revives:</p>
             <input type="number" name="revives" value="<%= win.revives %>">
-        </label>
-        <label>
-            Accuracy:
+            <p>Accuracy:(%)</p>
             <input type="number" name="accuracy" value="<%= win.accuracy %>">
-            (%)
-        </label>
-        <label>
-            Damage To Players:
+            <p>Damage To Players:</p>
             <input type="number" name="damageToPlayers" value="<%= win.damageToPlayers %>">
-        </label>
-        <label>
-            Head Shots:
+            <p>Head Shots:</p>
             <input type="number" name="headShots" value="<%= win.headShots %>">
-        </label>
-        <label>
-            Distance Traveled:
+            <p>Distance Traveled:(km)</p>
             <input type="number" name="distanceTraveled" value="<%= win.distanceTraveled %>">
-            (km)
-        </label>
-        <label>
-            Damage Taken:
+            <p>Damage Taken:</p>
             <input type="number" name="damageTaken" value="<%= win.damageTaken %>">
-        </label>
-        <label>
-            Win Streak:
+        </div>
+        <div class="notShownData">
+            <p>Win Streak:</p>
             <input type="number" name="winStreak" value="<%= win.winStreak %>">
-        </label>
-        <label>
-            Number Of Squad Mates:
+            <p>Number Of Squad Mates:</p>
             <input type="number" name="numOfSquadMates" value="<%= win.numOfSquadMates %>">
-        </label>
-        <label>
-            Users In Squad:
-            <input type="string" name="usersInSquad" value="<%= win.usersInSquad %>">
-        </label>
-        <label>
-            Number Of Squad Kills:
+            <p>Squad Mates:</p>
+            <input id="SM" type="string" name="usersInSquad" value="<%= win.usersInSquad %>">
+            <p>Number Of Squad Kills:</p>
             <input type="number" name="squadKills" value="<%= win.usersInSquad %>">
-        </label>
-        
-        <button type="submit">Edit the Dub</button>
-    </form>
+            <button class="btn btn-primary" type="submit">Add Dub</button>
+        </form>
 </section>
 
 <%- include('../partials/footer') %>
