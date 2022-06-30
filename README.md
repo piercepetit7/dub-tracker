@@ -19,7 +19,7 @@ Bootstrap - all cards on website usew this
 
 Google Fonts:
 
-Favicon: <a href=“https://www.flaticon.com/free-icons/gamepad">Gamepad icons created by Smashicons - Flaticon</a>
+Favicon: <a href='https://www.flaticon.com/free-icons/gamepad'> Gamepad icons created by Smashicons - Flaticon</a>
 
 
 ICEBOX:
