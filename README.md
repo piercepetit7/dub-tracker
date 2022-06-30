@@ -4,13 +4,16 @@
 
 This is a Application to help my friends and I track our wins"Dubs" in Battle Royale games! You can add, edit, delete Dubs with also add comment and ninja rating section!
 
+### Getting Started:
+
 Deployment: https://drop-team-dub-tracker.herokuapp.com
 
 Planning:https://trello.com/b/1zDejQK4/drop-team-dub-tracker
 
-Tech Used: HTML, CSS, JavaScript, Node, Express, Google OAuth, MongoDB, Mongoose, Bootstrap
+### Tech Used:
+ HTML, CSS, JavaScript, Node, Express, Google OAuth, MongoDB, Mongoose, Bootstrap
 
-Credits:
+### Credits:
 
 HUGE Thanks to Game Goose couldn't have done this without doing that code along!!! 
     https://gamegoose2.herokuapp.com/
@@ -27,7 +30,7 @@ Favicon: <a href='https://www.flaticon.com/free-icons/gamepad'> Gamepad icons cr
 ⬜️| Nope
 ✅| Yep -->
 
-
+### ToDos:
 <br>
 
 ICEBOX: | Task
