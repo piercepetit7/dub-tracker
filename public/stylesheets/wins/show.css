@@ -1,0 +1,46 @@
+.show {
+    text-align: center;
+    font-weight: bold;
+    color: #3C6E71;
+    background-color: #D9D9D9;
+    width: 450px;
+    padding: 10px 40px;
+    border-radius: 30px;
+}
+h1 {
+    color:#284B63 ;
+}
+h3 {
+    font-size: 22px;
+}
+.btn{
+    display: grid;
+    text-align: center;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color:  #284B63;
+    border: none;
+    color: #D9D9D9;
+    margin: 20px auto 20px auto;
+}
+h2 {
+    text-align: center;
+    color: #D9D9D9;
+    font-weight: bolder;
+    font-size: 24px;
+}
+
+.commCard {
+    display: grid;
+    grid-template-columns:1fr 1fr ;
+}
+@media (min-width: 769px) {
+    .commCard {
+        grid-template-columns:1fr 1fr ;
+    }
+    .card {
+        width: 320px;
+    }
+}

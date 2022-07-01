@@ -1,21 +1,24 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/style.css">
+<link rel="stylesheet" href='/stylesheets/profiles/index.css'>
 <%- include('../partials/nav') %>
 
-<main class="bg-light">
-    <div class="container py-5 px-3">
-        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g5 g-sm-3 g-xxl-5 px-sm-5 px-4">
-          <% profiles.forEach(profile => { %>
-            <div class="col">
+<main>
+  <h1>Here's Everyone!!!</h1>
+  <div class="container py-5 px-3">
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g5 g-sm-3 g-xxl-5 px-sm-5 px-4">
+      <% profiles.forEach(profile => { %>
+        <div class="col">
           <a class="text-decoration-none" href="/profiles/<%= profile._id %>">
-            <div class="card shadow-sm">
+            <div class="card">
                 <img
                   class="card-img-top"
                   src="<%= profile.avatar %>"
                   width="100%"
-                  height="170"
+                  height="150"
                 />
               <div class="card-body">
-                <p class="card-title fs-6 text-dark"><%= profile.name %></p>
+                <p id="nameCard" class="card-title"><%= profile.name %></p>
               </div>
             </div>
           </a>

@@ -4,19 +4,19 @@ body{
 h1 {
     font-size: 40px;
     text-align: center;
-    color: #9B00FB;
+    color: #3C6E71;
 
 }
 
 
 .inputForForm form{
-    background-color: #fff;
+    background-color: #D9D9D9;
     max-width: 250px;
     max-height: auto;
     margin: auto;
     padding: 10px 40px;
     border-radius: 30px;
-    box-shadow: 10px 100px 110px rgba(0, 0, 0, 0.694);
+    box-shadow: 10px 100px 110px #353535;
     font-size: 13px;
 }
 .headCard {
@@ -35,9 +35,9 @@ h1 {
     padding: 10px 20px;
     font-size: 18px;
     font-weight: bold;
-    background-color:  #9B00FB;
+    background-color:  #3C6E71;
     border: none;
-    color: white;
+    color: #D9D9D9;
     margin: 20px auto 20px auto;
 }
 

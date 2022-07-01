@@ -1,35 +1,37 @@
 <%- include('./partials/html-head') %>
 <link rel="stylesheet" href='/stylesheets/style.css'>
+<link rel="stylesheet" href='/stylesheets/index.css'>
 <%- include('./partials/nav') %>
 
 <main>
   <h1>Wut up, <%= user ? user.profile.name : "Gamer" %>, Welcome to the Dub Tracker</h1>
-  <h2><a href="/wins/new">ADD DUB NOW!</a></h2>
-  <section class="bg-light">
+  <a class="nav-link" href="/wins/new">
+  <h2 id="topLink">ADD DUB NOW!</h2>
+  </a>
+  <section class="wholepage">
     <% if (user) { %>
-    <div class="container">
+    <div class="container py-5 px-3">
       <h1 class="py-4"><%= title %></h1>
-      <h2 class="mb-3">Latest Dubs</h2>
-        <div class="card mb-3" style="max-width: 540px;">
+        <div class="cardWins mb-3" ">
           <% wins.forEach(win => { %>
-            <a class="text-decoration-none" href="/wins/<%= win._id %>">
-              <div class="col-md-4">
+            <a class="wholeCard" href="/wins/<%= win._id %>">
+              <div class="cardPic">
                 <img
-                  class="img-fluid"
+                  class="img-card"
                   src="<%= win.owner.avatar %>"
                   width="100%"
                 />
               </div>
-              <div class="col-md-8">
+              <div class="cardInfo">
                 <div class="card-body">
                   <h5 class="card-title"><%= win.owner.name %>'s Dub</h5>
                   <p class="card-text">
-                    | Kills:<%= win.kills %>
-                    | | Assists:<%= win.assists %>
-                    | | Revives:<%= win.revives %>
-                    | | Users In Squad:<%= win.usersInSquad %>
-                    | | Squad Kills:<%= win.squadKills %> |</p>
-                  <p class="card-text"><small class="text-muted">This Dub was caught on: <%= win.createdAt.toLocaleDateString() %></small></p>
+                    | Kills: <%= win.kills %>
+                    | | Assists: <%= win.assists %>
+                    | | Revives: <%= win.revives %>
+                    | | Users In Squad: <%= win.usersInSquad %>
+                    | | Squad Kills: <%= win.squadKills %> |</p>
+                  <p class="card-text"><small class="textDate">This Dub was caught on: <%= win.createdAt.toLocaleDateString() %></small></p>
                 </div>
               </div>
             </a>
@@ -50,7 +52,7 @@
               </div>
               <div class="col-9">
                 <div class="card-body">
-                  <h3 class="card-title fs-4 mb-0">
+                  <h3 class="card-titleC fs-4 mb-0">
                     <a
                       class="text-decoration-none text-dark"
                       href="/profiles/<%= comment.author._id %>"
@@ -93,7 +95,7 @@
                 width="100%"
               />
               <div class="card-body">
-                <p class="card-title text-dark fs-5 mb-0"><%= profile.name %></p>
+                <p class="card-titleU text-dark fs-5 mb-0"><%= profile.name %></p>
                 <p class="card-text text-dark fs-6 mt-0">
                   Joined <%= profile.createdAt.toLocaleDateString() %>
                 </p>

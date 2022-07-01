@@ -1,8 +1,10 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/style.css">
+<link rel="stylesheet" href='/stylesheets/profiles/show.css'>
 <%- include('../partials/nav') %>
 
 <main>
-  <section class="bg-dark text-secondary px-4 py-5 text-center">
+  <section class=" text-secondary px-4 py-5 text-center">
       <img
         src="<%= profile.avatar %>"
       >
@@ -16,82 +18,55 @@
               <td><%= user.email %></td>
             </tr>
           <% } %>
-          <tr>
-            <td>Name:</td>
-            <td><%= profile.name %></td>
-          </tr>
-          <tr>
-            <td>Avatar URL:</td>
-            <td>
-              <a href="<%= profile.avatar %>">
-                <%= profile.avatar.substring(0, 35) %>
-                <% if (profile.avatar.length > 35) { %>
-                ...
-                <% } %>
-              </a>
-            </td>
-          </tr>
         </tbody>
       </table>
     </div>
-    <% if (user.profile.equals(profile._id)) { %>
+    <% if (user) { %>
       <a 
-        class="btn btn-warning"
+        class="btn btn-primary"
         role="button" 
-        href=""
-      >
-        Edit Profile
-      </a>
-      <a 
-        class="btn btn-danger ms-4"
-        role="button" 
-        href="/auth/logout"
-      >
-        Logout
-      </a>
+        href="/profiles"
+      >Back to all Profiles</a>
     <% } %>
   </section>
-  <button class="btn btn-primary" href="/profiles">Back to all Profiles</button>
-  <section class="bg-light pt-3">
+  <section class=" pt-3">
     <div class="container">
       <h2 class="mb-3"><%= profile.name %>'s Dubs:</h2>
       <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g5 px-1">
         <% wins.forEach(win => { %> 
           <div class="card" style="width: 18rem;">
-              <div class="card-body">
-                  <h5 class="card-title"><%= win.owner.name %>'s Dub</h5>
-                  <p class="card-text">
-                      Crowned Victroy:<%= win.crownedVictroy %></p>
-                  <p class="card-text">
-                      Kills:<%= win.kills %></p>
-                  <p class="card-text">
-                      Assists:<%= win.assists %></p>
-                  <p class="card-text">
-                      Revives:<%= win.revives %></p>
-                  <p class="card-text">
-                      Accuracy:<%= win.accuracy %>%</p>
-                  <p class="card-text">
-                      Damage To Players:<%= win.damageToPlayers %></p>
-                  <p class="card-text">
-                      Head Shots:<%= win.headShots %></p>
-                  <p class="card-text">
-                      Distance Traveled:<%= win.distanceTraveled %>(km)</p>
-                  <p class="card-text">
-                      Damage Taken:<%= win.damageTaken %></p>
-                  <p class="card-text">
-                      Win Streak:<%= win.winStreak %></p>
-                  <p class="card-text">
-                      Number Of Squad Mates:<%= win.numOfSquadMates %></p>
-                  <p class="card-text">
-                      users In Squad:<%= win.usersInSquad %></p>
-                  <p class="card-text">
-                      Squad Kills:<%= win.squadKills %></p>
-                  <% if (user) { %>
-                  <a href="/wins/<%= win._id %>" class="btn btn-primary">Details / Add Comment</a>
-                  <% } %>
-              </div>
+            <div class="card-body">
+              <h5 class="card-title">The Dub...</h5>
+              <p class="card-text">
+                Kills:<%= win.kills %></p>
+              <p class="card-text">
+                Assists:<%= win.assists %></p>
+              <p class="card-text">
+                Revives:<%= win.revives %></p>
+              <p class="card-text">
+                Accuracy:<%= win.accuracy %>%</p>
+              <p class="card-text">
+                Damage To Players: <%= win.damageToPlayers %></p>
+              <p class="card-text">
+                Head Shots:<%= win.headShots %></p>
+              <p class="card-text">
+                Distance Traveled: <%= win.distanceTraveled %>(km)</p>
+              <p class="card-text">
+                Damage Taken:<%= win.damageTaken %></p>
+              <p class="card-text">
+                Win Streak:<%= win.winStreak %></p>
+              <p class="card-text">
+                Number Of Squad Mates:<%= win.numOfSquadMates %></p>
+              <p class="card-text">
+                users In Squad:<%= win.usersInSquad %></p>
+              <p class="card-text">
+                Squad Kills:<%= win.squadKills %></p>
+              <% if (user) { %>
+              <a href="/wins/<%= win._id %>" class="btn btn-primary">Details / Add Comment</a>
+              <% } %>
+            </div>
           </div>
-      <% }) %> 
+        <% }) %> 
       </div>
     </div>
   </section>

@@ -1,28 +1,31 @@
-
+<% if (!user) { %>
+  <link rel="stylesheet" href="/stylesheets/siwg.css">
+<% } %>
 </head>
 <body>
   <nav>
     <% if (user) { %>
-      <section>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-light ">
           <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <img class="navbar-brand" href=" /profiles/" src="<%= user.profile.avatar %>"></img>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
+              <span></span>
+              <span></span>
+              <span></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
+            <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="/">Home</a>
+                  <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="/wins/new">ADD DUB!</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/wins/index">All Dubs</a>
+                <li class="nav-item ">
+                  <a class="nav-link"  href="/wins/index">All Dubs</a>
                 </li>
-                <!-- <li class="nav-item">
-                  <a class="nav-link" href="#"></a>
-                </li> -->
                 <li class="nav-item">
                   <a class="nav-link" href="/profiles">Profiles</a>
                 </li>
@@ -30,7 +33,7 @@
             </div>
           </div>
         </nav>
-      </section>
+      </header>
       <% } else { %>
         <a href="/auth/google" class="siwg-link">
           <button type="submit" class="siwg">
@@ -39,16 +42,10 @@
         </a>
         <% } %>
         <section>
-          <a href="/auth/logout">
-            <button type="submit">Logout</button>
-          </a>
-        </section>
-        <section>
           <div id="pro-pic-nav">
             <img
-              src="<%= user.profile.avatar %>"
-              alt="<%= user.profile.name %> avatar"
-            />
+              
+              />
           </div>
         </section>
       </nav>

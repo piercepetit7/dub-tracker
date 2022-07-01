@@ -75,6 +75,7 @@ function edit(req, res) {
         res.redirect('/')
     })
 }
+
 function update(req, res) {
     Win.findById(req.params.id)
     .then(win => {

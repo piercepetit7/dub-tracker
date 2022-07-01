@@ -1,0 +1,73 @@
+main {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #353535;
+}
+
+h1 {
+    font-size: 3.6rem;
+    color: #D9D9D9;
+    font-weight: bolder;
+}
+h2 {
+    color: #D9D9D9;
+    font-weight: bolder;
+    font-size: 28px;
+}
+#topLink{
+    color: gold;
+    font-weight: bolder;
+}
+.cardWins {
+    background-color: #353535;
+    width: auto;
+
+}
+.wholeCard{
+    display: grid;
+    grid-template-columns: 175px auto;
+    width: auto;
+    margin-bottom: 20px;
+    background-color: #284B63;
+    text-decoration: none;
+}
+.cardPic{
+    border-radius: 30px;
+
+}
+.cardInfo{
+    font-weight: bolder;
+    font-size: 12px;
+    color: #FFFFFF ;
+}
+.card-title{
+    color: gold;
+    text-align: left;
+    font-size: 19px;
+}
+.textDate{
+    color:#3c6e71b0 ;
+}
+.card {
+    background-color: #284B63;
+    font-weight: bolder;
+    color: #D9D9D9;
+}
+
+@media (min-width: 750px) {
+    .cardInfo{
+        font-size: 16px;
+    }
+    .card-title{
+        font-size: 29px;
+        padding-bottom: 10px;
+    }
+}
+@media (min-width: 1000px) {
+    .cardInfo{
+        font-size: 22px;
+    }
+}
