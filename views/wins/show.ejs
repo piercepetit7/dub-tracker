@@ -4,8 +4,8 @@
 <%- include('../partials/nav') %>
 
 <main>
+    <h1><%= win.owner.name %>'s Dub</h1>
     <section class="show">
-        <h1><%= win.owner.name %>'s Dub</h1>
         <h2><%= win.name %></h2>
         <h3>Kills: <%= win.kills %></h3>
         <h3>Assists: <%= win.assists %></h3>
@@ -17,7 +17,7 @@
         <h3>Damage Taken :<%= win.damageTaken %></h3>
         <h3>Win Streak: <%= win.winStreak %></h3>
         <h3>Number Of Squad Mates: <%= win.numOfSquadMates %></h3>
-        <h3>users In Squad: <%= win.usersInSquad %></h3>
+        <h3>Users In Squad: <%= win.usersInSquad %></h3>
         <h3>Squad Kills: <%= win.squadKills %></h3>
     </section>
     <div class="ownerBtn">

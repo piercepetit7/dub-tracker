@@ -1,13 +1,26 @@
+
+
 body{
     background-color: #4f5766;
 }
 h1 {
     font-size: 40px;
     text-align: center;
-    color: #3C6E71;
-
+    color: gold;
+    padding-bottom: 45px;
+    padding-top: 30px;
 }
-
+h2{
+    font-size: 30px;
+}
+input{
+    margin-bottom: 7px;
+}
+p {
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+}
 
 .inputForForm form{
     background-color: #D9D9D9;
@@ -43,8 +56,23 @@ h1 {
 
 
 @media (min-width: 576px) {
+    h1 {
+        font-size: 80px;
+        padding-bottom: 85px;
+        padding-top: 60px;
+    }
     .inputForForm form{
         padding: 50px 20px;
         max-width: 480px;
+    }
+    h2{
+        font-size: 50px;
+    }
+    input{
+        margin-bottom: 27px;
+    }
+    p {
+        font-size: 30px;
+        font-weight: bolder;
     }
 }
