@@ -28,7 +28,7 @@ function index(req, res) {
             profiles,
             wins,
             comments,
-            title: 'Latest Activity'
+            title: 'The Dub Tracker!'
           })
         })
       })
