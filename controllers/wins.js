@@ -93,7 +93,7 @@ function update(req, res) {
         res.redirect(`/`)
     })
 }
-function deleteTaco(req, res) {
+function deleteWin(req, res) {
     Win.findByIdAndDelete(req.params.id)
     .then(win => {
         if (win.owner.equals(req.user.profile._id)) {
@@ -118,5 +118,5 @@ export {
     show,
     edit,
     update,
-    deleteTaco as delete,
+    deleteWin as delete,
 }
